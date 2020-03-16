@@ -10,7 +10,8 @@
     "google-map-react": "^1.1.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "twilio": "^3.40.0"
   },
   "scripts": {
     "start": "react-scripts start",

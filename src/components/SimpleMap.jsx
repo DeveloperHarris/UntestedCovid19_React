@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
+import AddCase from "./AddCase";
 
 class SimpleMap extends Component {
   static defaultProps = {
@@ -19,6 +20,7 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         ></GoogleMapReact>
+        <AddCase />
       </div>
     );
   }
