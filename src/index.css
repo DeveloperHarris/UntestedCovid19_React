@@ -20,6 +20,7 @@ code {
   width: 80px;
   background-color: white;
   z-index: 2;
+  border-radius: 15px;
 }
 
 .newCaseForm {
@@ -52,4 +53,11 @@ code {
 .sendPhoneCode {
   width: 75px;
   text-align: center;
+}
+
+.selfReport {
+  margin: 0;
+  margin-top: -10px;
+  font-size: 13px;
+  padding: 0;
 }

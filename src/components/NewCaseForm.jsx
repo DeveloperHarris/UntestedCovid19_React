@@ -14,7 +14,8 @@ class NewCaseForm extends Component {
     phone: "",
     code: "",
     timestamp: 0,
-    zipcode: "84604"
+    lat: 40.235119,
+    lng: -111.662193
   };
 
   //todo implement zipcode
@@ -55,6 +56,20 @@ class NewCaseForm extends Component {
         body: data
       }
     );
+  };
+
+  getLocation = () => {
+    // TODO: get location of user using gelocation API
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setCoords);
+    }
+  };
+
+  setCoords = position => {
+    this.setState({
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    });
   };
 
   // TODO: refactor this so we don't need to repeat so much code
@@ -144,16 +159,12 @@ class NewCaseForm extends Component {
             />
             <p>Sore Throat</p>
           </label>
-          <div className="slidecontainer">
-            <p>Rate how sure you are</p>
-            <input
-              type="range"
-              min="1"
-              max="10"
-              className="slider"
-              id="myRange"
-            />
-          </div>
+          <input
+            type="submit"
+            value="Use GPS"
+            className="sendPhoneCode"
+            onClick={this.getLocation}
+          />
           <div className="phoneVerificationForm">
             <p>Phone Number (To Verify)</p>
             <input

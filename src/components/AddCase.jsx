@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NewCaseForm from "./NewCaseForm";
+import addCaseImage from "../addCaseButton.png";
 
 class AddCase extends Component {
   state = {
@@ -13,7 +14,8 @@ class AddCase extends Component {
     return (
       <React.Fragment>
         <div className="addCase" onClick={this.handleClick}>
-          Add a new unconfirmed case
+          <img src={addCaseImage} height="60px"></img>
+          <p className="selfReport">Self Report</p>
         </div>
         {this.state.active ? <NewCaseForm /> : null}
       </React.Fragment>
