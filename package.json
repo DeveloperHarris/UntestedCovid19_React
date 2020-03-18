@@ -10,6 +10,7 @@
     "google-map-react": "^1.1.6",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-phone-number-input": "^3.0.22",
     "react-scripts": "3.4.0",
     "twilio": "^3.40.0"
   },

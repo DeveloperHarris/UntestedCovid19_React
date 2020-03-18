@@ -1,10 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscalel;
+  font-family: "Open Sans", sans-serif;
 }
 
 code {
@@ -33,26 +31,78 @@ code {
   flex-direction: column;
   flex-wrap: wrap;
 
-  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  top: 40%; /* position the top  edge of the element at the middle of the parent */
   left: 50%; /* position the left edge of the element at the middle of the parent */
+
+  padding: 20px;
+  border-radius: 10px;
 
   transform: translate(-50%, -50%);
 }
 
-.newCaseForm p,
-.newCaseForm input {
-  display: inline-block;
+.newCaseHeader,
+.addLocation,
+.phoneNumber,
+.verificationCode {
+  font-weight: bold;
+}
+
+.newCaseForm .spacer {
+  margin-bottom: 4px;
+}
+
+.newCaseForm .inputText,
+.newCaseForm input[type="checkbox"] {
+  display: block;
   float: left;
-  text-align: left;
+  text-align: center;
 }
 
 .newCaseForm p {
   margin: 0;
 }
 
-.sendPhoneCode {
-  width: 75px;
-  text-align: center;
+.locationDivs {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.locationText {
+  font-size: 11px;
+}
+
+.button {
+  color: white;
+  padding: 0 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+
+  cursor: pointer;
+}
+
+.active {
+  background-color: #00c667;
+}
+
+.disabled {
+  background-color: darkgray;
+}
+
+.active:hover {
+  background-color: #009334;
+}
+
+.phoneVerificationForm,
+.phoneVerificationCheck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PhoneInputInput {
+  flex: none !important;
+  width: 130px;
 }
 
 .selfReport {
