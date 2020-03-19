@@ -1,0 +1,19 @@
+{
+    "selfReport": "Self Report",
+    "submit": "submit",
+    "symptomForm": "Mark you symptoms",
+    "shortOfBreath": "short of breath",
+    "cough": "cough",
+    "soreThroat": "sore throat",
+    "runnyNose": "runny nose",
+    "congestion": "congestion",
+    "headhache": "headache",
+    "fever": "fever",
+    "diarrhea": "diarrhea",
+    "bodyAches": "body aches",
+    "location": "Location",
+    "autoDetect": "Auto detect",
+    "phoneNumber": "Phone number",
+    "sendCode": "Get verification code",
+    "verificationCode": "Verification code"
+}

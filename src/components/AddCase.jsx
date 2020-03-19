@@ -16,7 +16,7 @@ class AddCase extends Component {
     return (
       <React.Fragment>
         <div className="addCase" onClick={this.handleClick}>
-          <img src={addCaseImage} height="60px"></img>
+          <img alt={t('selfReport')} src={addCaseImage} height="60px"></img>
           <p className="selfReport">{t('selfReport')}</p>
         </div>
         {this.state.active ? <NewCaseForm /> : null}
@@ -25,4 +25,4 @@ class AddCase extends Component {
   }
 }
 
-export default withTranslation("AddCase")(AddCase);
+export default withTranslation()(AddCase);
