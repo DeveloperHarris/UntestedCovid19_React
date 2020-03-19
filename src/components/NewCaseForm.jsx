@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { withTranslation } from 'react-i18next';
 
 class NewCaseForm extends Component {
   state = {
@@ -106,10 +107,11 @@ class NewCaseForm extends Component {
 
   // TODO: refactor this so we don't need to repeat so much code
   render() {
+    const { t } = this.props;
     return (
       <React.Fragment>
         <div className="newCaseForm">
-          <p className="newCaseHeader">Mark Your Symptoms</p>
+          <p className="newCaseHeader">{t('symptomForm')}</p>
           <label>
             <input
               type="checkbox"
@@ -117,7 +119,7 @@ class NewCaseForm extends Component {
               value="short of breath"
               onClick={() => this.handleChange("short_of_breath")}
             />
-            <p className="inputText">Short of Breath</p>
+            <p className="inputText">{t('shortOfBreath')}</p>
           </label>
           <label>
             <input
@@ -126,7 +128,7 @@ class NewCaseForm extends Component {
               value="cough"
               onClick={() => this.handleChange("cough")}
             />
-            <p className="inputText">Cough</p>
+            <p className="inputText">{t("cough")}</p>
           </label>
           <label>
             <input
@@ -135,7 +137,7 @@ class NewCaseForm extends Component {
               value="sore_throat"
               onClick={() => this.handleChange("sore_throat")}
             />
-            <p className="inputText">Sore Throat</p>
+            <p className="inputText">{t("soreThroat")}</p>
           </label>
           <label>
             <input
@@ -144,7 +146,7 @@ class NewCaseForm extends Component {
               value="runny_nose"
               onClick={() => this.handleChange("runny_nose")}
             />
-            <p className="inputText">Runny Nose</p>
+            <p className="inputText">{t("runnyNose")}</p>
           </label>
           <label>
             <input
@@ -153,7 +155,7 @@ class NewCaseForm extends Component {
               value="congestion"
               onClick={() => this.handleChange("congestion")}
             />
-            <p className="inputText">Congestion</p>
+            <p className="inputText">{t("congestion")}</p>
           </label>
 
           <label>
@@ -163,7 +165,7 @@ class NewCaseForm extends Component {
               value="headache"
               onClick={() => this.handleChange("headache")}
             />
-            <p className="inputText">Headache</p>
+            <p className="inputText">{t("headhache")}</p>
           </label>
           <label>
             <input
@@ -172,7 +174,7 @@ class NewCaseForm extends Component {
               value="fever"
               onClick={() => this.handleChange("fever")}
             />
-            <p className="inputText">Fever</p>
+            <p className="inputText">{t("fever")}</p>
           </label>
           <label>
             <input
@@ -181,7 +183,7 @@ class NewCaseForm extends Component {
               value="diarrhea"
               onClick={() => this.handleChange("diarrhea")}
             />
-            <p className="inputText">Diarrhea</p>
+            <p className="inputText">{t('diarrhea')}</p>
           </label>
           <label>
             <input
@@ -190,14 +192,14 @@ class NewCaseForm extends Component {
               value="body_aches"
               onClick={() => this.handleChange("body_aches")}
             />
-            <p className="inputText">Body Aches</p>
+            <p className="inputText">{t('bodyAches')}</p>
           </label>
 
           <div className="spacer" />
           <div className="locationDivs">
-            <p className="addLocation">Add Location: </p>
+            <p className="addLocation">{t('location')}: </p>
             <div className="active button" onClick={this.getLocation}>
-              Use GPS
+              {t('autoDetect')}
             </div>
           </div>
           <div className="location">
@@ -211,12 +213,12 @@ class NewCaseForm extends Component {
 
           <div className="spacer" />
           <div className="phoneVerificationForm">
-            <p className="phoneNumber">Verify Phone Number:</p>
+            <p className="phoneNumber">{t('phoneNumber')}:</p>
 
             <div className="spacer" />
 
             <PhoneInput
-              placeholder="Enter phone number"
+              placeholder={t('phoneNumber')}
               defaultCountry="US"
               value={this.state.phone}
               onChange={this.setPhone}
@@ -227,7 +229,7 @@ class NewCaseForm extends Component {
               className="active button sendPhoneCode"
               onClick={this.sendPhoneCode}
             >
-              Send Code
+              {t("sendCode")}
             </div>
             <div className="response">
               <p className="responseText">{this.state.sent ? "Sent" : ""}</p>
@@ -235,7 +237,7 @@ class NewCaseForm extends Component {
           </div>
           <div className="spacer" />
           <div className="phoneVerificationCheck">
-            <p className="verificationCode">Verification Code:</p>
+            <p className="verificationCode">{t("verificationCode")}:</p>
             <input
               type="text"
               id="verificationCode"
@@ -251,7 +253,7 @@ class NewCaseForm extends Component {
                 Submit
               </div>
             ) : (
-              <div className="disabled button">Submit</div>
+              <div className="disabled button">{t('submit')}</div>
             )}
             <p className="responseText">
               {this.state.submitted ? "Submitted" : ""}
@@ -263,4 +265,4 @@ class NewCaseForm extends Component {
   }
 }
 
-export default NewCaseForm;
+export default withTranslation()(NewCaseForm);

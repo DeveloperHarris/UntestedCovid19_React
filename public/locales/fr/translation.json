@@ -1,0 +1,19 @@
+{
+    "selfReport": "symptomes",
+    "submit": "envoyer",
+    "symptomForm": "Annoncer ses symptomes",
+    "shortOfBreath": "difficultés respiratoires",
+    "cough": "toux",
+    "soreThroat": "mal de gorge",
+    "runnyNose": "nez qui coule",
+    "congestion": "congestion",
+    "headhache": "maux de tête",
+    "fever": "fièvre",
+    "diarrhea": "diarrhée",
+    "bodyAches": "courbatures",
+    "location": "Localisation",
+    "autoDetect": "Dectecter automatiquement",
+    "phoneNumber": "Numéro de téléphone",
+    "sendCode": "Obtenir un code de vérification",
+    "verificationCode": "Code de vérification"
+}

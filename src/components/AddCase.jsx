@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewCaseForm from "./NewCaseForm";
 import addCaseImage from "../addCaseButton.png";
+import { withTranslation } from 'react-i18next';
 
 class AddCase extends Component {
   state = {
@@ -11,11 +12,12 @@ class AddCase extends Component {
     this.setState({ active: !this.state.active });
   };
   render() {
+    const { t } = this.props;
     return (
       <React.Fragment>
         <div className="addCase" onClick={this.handleClick}>
-          <img src={addCaseImage} height="60px"></img>
-          <p className="selfReport">Self Report</p>
+          <img alt={t('selfReport')} src={addCaseImage} height="60px"></img>
+          <p className="selfReport">{t('selfReport')}</p>
         </div>
         {this.state.active ? <NewCaseForm /> : null}
       </React.Fragment>
@@ -23,4 +25,4 @@ class AddCase extends Component {
   }
 }
 
-export default AddCase;
+export default withTranslation()(AddCase);

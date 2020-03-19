@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Suspense } from 'react';
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import firebase from "firebase";
+import './i18n';
 
 var firebaseConfig = {
   apiKey: "AIzaSyDj7fuR-m413SClO_dqADqKhb_6plj4Hiw",
@@ -18,7 +19,10 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+<Suspense fallback="loading">
+  <App />
+</Suspense>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
